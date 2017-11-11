@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+
+  neurio-export-mqtt:
+    build:
+      context: .
+    restart: always
+    environment:
+      NEST_CLIENT_ID: "$NEST_CLIENT_ID"
+      NEST_CLIENT_SECRET: "$NEST_CLIENT_SECRET"
+      NEST_LOCATION: "$NEST_LOCATION"
+      NEST_MQTT_SERVER: "$NEST_MQTT_SERVER"
+      NEST_ACCESS_TOKEN: "$NEST_ACCESS_TOKEN"
+      NEST_POLL_INTERVAL: 60
