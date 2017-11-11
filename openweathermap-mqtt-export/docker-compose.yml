@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+
+  openweathermap-export-mqtt:
+    build:
+      context: .
+    restart: always
+    environment:
+      OPENWEATHERMAP_API_KEY: "$OPENWEATHERMAP_API_KEY"
+      OPENWEATHERMAP_CITY_ID: "$OPENWEATHERMAP_CITY_ID"
+      OPENWEATHERMAP_MQTT_SERVER: "$OPENWEATHERMAP_MQTT_SERVER"
+      OPENWEATHERMAP_POLL_INTERVAL: 60
