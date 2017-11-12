@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+
+  forecastio-export-mqtt:
+    build:
+      context: .
+    restart: always
+    environment:
+      FORECASTIO_API_KEY: "$FORECASTIO_API_KEY"
+      FORECASTIO_LOCATION: "$FORECASTIO_LOCATION"
+      FORECASTIO_MQTT_SERVER: "$FORECASTIO_MQTT_SERVER"
+      FORECASTIO_POLL_INTERVAL: 120
