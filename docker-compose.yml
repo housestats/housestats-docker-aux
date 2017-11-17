@@ -1,0 +1,46 @@
+version: "3"
+
+services:
+
+  forecastio-export-mqtt:
+    build:
+      context: forecastio-export-mqtt
+    restart: always
+    environment:
+      FORECASTIO_API_KEY: "$FORECASTIO_API_KEY"
+      FORECASTIO_LOCATION: "$FORECASTIO_LOCATION"
+      FORECASTIO_MQTT_SERVER: "$FORECASTIO_MQTT_SERVER"
+      FORECASTIO_POLL_INTERVAL: 300
+
+  nest-export-mqtt:
+    build:
+      context: nest-export-mqtt
+    restart: always
+    environment:
+      NEST_CLIENT_ID: "$NEST_CLIENT_ID"
+      NEST_CLIENT_SECRET: "$NEST_CLIENT_SECRET"
+      NEST_LOCATION: "$NEST_LOCATION"
+      NEST_MQTT_SERVER: "$NEST_MQTT_SERVER"
+      NEST_ACCESS_TOKEN: "$NEST_ACCESS_TOKEN"
+      NEST_POLL_INTERVAL: 60
+
+  neurio-export-mqtt:
+    build:
+      context: neurio-export-mqtt
+    restart: always
+    environment:
+      NEURIO_CLIENT_ID: "$NEURIO_CLIENT_ID"
+      NEURIO_CLIENT_SECRET: "$NEURIO_CLIENT_SECRET"
+      NEURIO_SENSOR_ID: "$NEURIO_SENSOR_ID"
+      NEURIO_MQTT_SERVER: "$NEURIO_MQTT_SERVER"
+      NEURIO_POLL_INTERVAL: 60
+
+  openweathermap-export-mqtt:
+    build:
+      context: openweathermap-export-mqtt
+    restart: always
+    environment:
+      OPENWEATHERMAP_API_KEY: "$OPENWEATHERMAP_API_KEY"
+      OPENWEATHERMAP_CITY_ID: "$OPENWEATHERMAP_CITY_ID"
+      OPENWEATHERMAP_MQTT_SERVER: "$OPENWEATHERMAP_MQTT_SERVER"
+      OPENWEATHERMAP_POLL_INTERVAL: 300
